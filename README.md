@@ -1,24 +1,11 @@
-# README
+Ruby on Rails RSS reader
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation
 
-Things you may want to cover:
+1. bundle install
+2. Rails db:setup db:migrate db:seed
+3. rails s
 
-* Ruby version
+Running tests
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. bundle exec rspec spec/
