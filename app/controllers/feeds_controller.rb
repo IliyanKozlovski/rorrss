@@ -8,10 +8,28 @@ class FeedsController < ApplicationController
   end
 
   def create
-    @feed = Feed.create(feed_params)
+    @feed = Feed.new(feed_params)
+
+    if @feed.save
+
+      redirect_to feeds_path, notice: "Feed #{@feed.name} saved!"
+    else
+      flash[:alert] = "feed cannot be saved"
+      render :new
+    end
+  end
+
+  def destroy
+    @feed = Feed.find(params[:id])
+    if (@feed and @feed.destroy)
+      redirect_to feeds_path, notice: "Feed #{@feed.name} deleted!"
+    else
+      flash[:alert] = "feed cannot be deleted"
+      render :index
+    end
   end
 
   def feed_params
-    params.require(:feed).permit(:name, :url, :descriotion)
+    params.require(:feed).permit(:name, :url, :description)
   end
 end

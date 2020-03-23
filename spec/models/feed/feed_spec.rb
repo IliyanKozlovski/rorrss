@@ -7,6 +7,15 @@ HACKER_NEWS = {
 RSpec.describe Feed, type: :model do
   describe 'feed attributes' do
     let(:feed) { Feed.new }
+
+    context "attributes" do
+      ["name", "url", "description"].each do |attribute|
+        it "has attribute #{attribute}" do
+          expect(feed).to have_attribute(attribute)
+        end
+      end
+    end
+
     it "has a name" do
       feed.name = HACKER_NEWS[:name]
       expect(feed.name).to eq HACKER_NEWS[:name]

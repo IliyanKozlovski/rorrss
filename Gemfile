@@ -21,12 +21,13 @@ gem 'webpacker', '~> 3.3.1'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'feedjira'
 gem 'twitter-bootstrap-rails'
-gem "slim"
+gem "slim-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem "rspec-rails"
+  gem "rspec-rails", '4.0.0.rc1'
+  gem "rails-controller-testing"
 end
 
 group :development do

@@ -1,0 +1,15 @@
+
+table.table.table-striped
+  - @feeds.each do |feed|
+    tr
+      td
+        = feed.name
+      td
+        = feed.url
+      td
+        = feed.description
+      td
+        = link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' }
+
+div
+  = link_to "Create", new_feed_path
