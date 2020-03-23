@@ -4,6 +4,7 @@ Installation
 
 1. bundle install
 2. Rails db:setup db:migrate db:seed
+3. bundle exec rake sync:feeds
 3. rails s
 
 Running tests
