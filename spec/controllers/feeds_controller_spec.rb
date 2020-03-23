@@ -15,6 +15,25 @@ RSpec.describe FeedsController do
     end
   end
 
+  describe "GET main" do
+    it "checks for success status" do
+      get :main
+
+      expect(response).to be_successful
+    end
+
+    it "gets entities" do
+      feed = Feed.create(name: "Test", url: "example.com", description: "test")
+      feed.feed_entries.create(title: "new corona v....", published: Time.now.utc, content: "test-content",
+        url: "example.com", author: "author")
+
+      get :main
+
+      expect(response).to be_successful
+      expect(assigns(:entries).length).to eq 1
+    end
+  end
+
   describe "GET new" do
     it "checks for success status" do
       get :new

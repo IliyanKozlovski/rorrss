@@ -3,6 +3,10 @@ class FeedsController < ApplicationController
     @feeds = Feed.all
   end
 
+  def main
+    @entries = FeedEntry.all
+  end
+
   def new
     @feed = Feed.new
   end

@@ -20,6 +20,7 @@ gem 'webpacker', '~> 3.3.1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'feedjira'
+gem 'httparty'
 gem 'twitter-bootstrap-rails'
 gem "slim-rails"
 

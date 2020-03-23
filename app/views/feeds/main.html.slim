@@ -1,0 +1,13 @@
+table.table.table-striped
+  - @entries.each do |feed|
+    tr
+      td
+        = feed.title
+      td
+        = link_to feed.content, feed.url, target: "_blank"
+      td
+        = feed.author
+      td
+        = time_ago_in_words feed.published
+
+= link_to "Manage Feeds", feeds_path
